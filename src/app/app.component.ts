@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MsalService } from './services/msal.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mtosh-sso-ui';
+  
+
+  constructor(private msalService: MsalService) {}
+
+  useremail() {
+    return this.msalService.getUserEmail();    
+  }
+
+  login() {
+    this.msalService.login();
+  }
+
+  signup() {
+    this.msalService.signup();
+  }
+
+  resetPassword() {
+    this.msalService.resetPassword();
+  }
+
+  logout() {
+    this.msalService.logout();
+  }
+
+  isUserLoggedIn() {
+    return this.msalService.isLoggedIn();
+  }
+
 }

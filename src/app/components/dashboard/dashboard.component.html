@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Dashboard</mat-card-title>
+  <mat-card-content>
+    <button mat-raised-button color="primary" (click)="getValues()">Get Data</button>     
+  </mat-card-content>
+</mat-card>
+<div *ngIf="values">
+  <ul *ngFor="let value of values">
+    <div>{{value}}</div>
+  </ul>
+</div>
